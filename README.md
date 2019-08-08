@@ -34,15 +34,15 @@ The `sendgrid` driver will need be utilized in the @via method of the Notificati
  * Get the notification's delivery channels.
  *
  * @param  mixed  $notifiable
-    * @return array
-    */
+ * @return array
+ */
 public function via($notifiable)
 {
     return ['sendgrid'];
 }
 ```
 
-Then, a `toSendGrid()` method call can be used to generate the SendGridMailMessage:
+Then, a `toSendGrid` method call can be used to generate the SendGridMailMessage:
 ```php
 /**
  * Get the mail representation of the notification.
