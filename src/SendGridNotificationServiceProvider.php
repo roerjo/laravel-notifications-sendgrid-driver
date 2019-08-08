@@ -17,7 +17,9 @@ class SendGridNotificationServiceProvider extends ServiceProvider
     {
         parent::register();
 
-        ChannelManager::extend('sendgrid', function ($app) {
+        $channel_manager = $this->app->make(ChannelManager::class);
+
+        $channel_manager->extend('sendgrid', function ($app) {
             return $app->make(SendGridMailChannel::class);
         });
     }
