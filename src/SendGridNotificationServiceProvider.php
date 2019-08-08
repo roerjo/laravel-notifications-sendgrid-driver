@@ -6,7 +6,7 @@ use Illuminate\Notifications\ChannelManager;
 use Roerjo\LaravelNotificationsSendGridDriver\Channels\SendGridMailChannel;
 use Illuminate\Notifications\NotificationServiceProvider as ServiceProvider;
 
-class NotificationServiceProvider extends ServiceProvider
+class SendGridNotificationServiceProvider extends ServiceProvider
 {
     /**
      * Register the service provider.
@@ -15,6 +15,8 @@ class NotificationServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        parent::register();
+
         ChannelManager::extend('sendgrid', function ($app) {
             return $app->make(SendGridMailChannel::class);
         });
