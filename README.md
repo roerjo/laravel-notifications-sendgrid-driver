@@ -5,7 +5,7 @@ A Notification Driver with support for Sendgrid Web API.
 
 # Requirements
 
-This package depends upon https://github.com/s-ichikawa/laravel-sendgrid-driver. Ensure that you have this package installed before using this package.
+This package depends upon https://github.com/s-ichikawa/laravel-sendgrid-driver. Ensure that you have that package installed before using this package.
 
 
 # Install (Laravel)
