@@ -2,9 +2,9 @@
 
 namespace Roerjo\LaravelNotificationsSendGridDriver;
 
-use Illuminate\Notifications\ChannelManager;
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Notification;
 use Roerjo\LaravelNotificationsSendGridDriver\Channels\SendGridMailChannel;
-use Illuminate\Notifications\NotificationServiceProvider as ServiceProvider;
 
 class SendGridNotificationServiceProvider extends ServiceProvider
 {
@@ -15,11 +15,7 @@ class SendGridNotificationServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        parent::register();
-
-        $channel_manager = $this->app->make(ChannelManager::class);
-
-        $channel_manager->extend('sendgrid', function ($app) {
+        Notification::extend('sendgrid', function ($app) {
             return $app->make(SendGridMailChannel::class);
         });
     }
