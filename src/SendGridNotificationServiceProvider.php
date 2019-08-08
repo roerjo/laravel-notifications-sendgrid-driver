@@ -1,9 +1,9 @@
 <?php
 
-namespace Roerjo;
+namespace Roerjo\LaravelNotificationsSendGridDriver;
 
-use Roerjo\Channels\SendGridMailChannel;
 use Illuminate\Notifications\ChannelManager;
+use Roerjo\LaravelNotificationsSendGridDriver\Channels\SendGridMailChannel;
 use Illuminate\Notifications\NotificationServiceProvider as ServiceProvider;
 
 class NotificationServiceProvider extends ServiceProvider

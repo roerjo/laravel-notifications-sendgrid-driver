@@ -1,6 +1,6 @@
 <?php
 
-namespace Roerjo\Channels;
+namespace Roerjo\LaravelNotificationsSendGridDriver\Channels;
 
 use Illuminate\Notifications\Notification;
 use Illuminate\Notifications\Channels\MailChannel;

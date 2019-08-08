@@ -1,6 +1,6 @@
 <?php
 
-namespace Roerjo\Messages;
+namespace Roerjo\LaravelNotificationsSendGridDriver\Messages;
 
 use Illuminate\Notifications\Messages\MailMessage;
 
@@ -17,7 +17,7 @@ class SendGridMailMessage extends MailMessage
      * Attach SendGrid options to the message
      *
      * @param array $params
-     * @return \Roerjo\Messages\SendGridMailMessage $this
+     * @return \Roerjo\LaravelNotificationsSendGridDriver\Messages\SendGridMailMessage $this
      */
     public function sendgrid(array $params)
     {
