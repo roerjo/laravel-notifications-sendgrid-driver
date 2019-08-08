@@ -10,18 +10,19 @@ This package depends upon https://github.com/s-ichikawa/laravel-sendgrid-driver.
 
 # Install (Laravel)
 
+```bash
+composer require roerjo/laravel-notifications-sendgrid-driver:"^1.0"
+```
+
+OR
+
 Add the package to your composer.json and run composer update.
 ```json
 "require": {
-    "roerjo/laravel-notifications-sendgrid-driver": "dev-master"
+    "roerjo/laravel-notifications-sendgrid-driver": "^1.0"
 },
-"repositories": [
-    {
-        "type": "vcs",
-        "url": "https://github.com/roerjo/laravel-notifications-sendgrid-driver"
-    }
-],
 ```
+
 
 # Usage
 
