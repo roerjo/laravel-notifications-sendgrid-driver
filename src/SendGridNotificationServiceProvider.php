@@ -13,7 +13,7 @@ class SendGridNotificationServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function boot()
     {
         Notification::extend('sendgrid', function ($app) {
             return $app->make(SendGridMailChannel::class);
