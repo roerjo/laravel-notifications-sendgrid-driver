@@ -11,7 +11,7 @@ This package depends upon https://github.com/s-ichikawa/laravel-sendgrid-driver.
 # Install (Laravel)
 
 ```bash
-composer require roerjo/laravel-notifications-sendgrid-driver:"^1.0"
+composer require roerjo/laravel-notifications-sendgrid-driver
 ```
 
 OR
@@ -19,7 +19,7 @@ OR
 Add the package to your composer.json and run composer update.
 ```json
 "require": {
-    "roerjo/laravel-notifications-sendgrid-driver": "^1.0"
+    "roerjo/laravel-notifications-sendgrid-driver": "^1"
 },
 ```
 
@@ -76,4 +76,10 @@ public function toSendGrid($notifiable)
 Be sure to import SendGridMailMessage if not using the fully qualified namespace in `toSendGrid`:
 ```php
 use \Roerjo\LaravelNotificationsSendGridDriver\Messages\SendGridMailMessage;
+```
+
+## Anonymous Notifications
+```php
+Notification::route('sendgrid', 'test@test.com')
+    ->notify(new ReportNotification);
 ```
