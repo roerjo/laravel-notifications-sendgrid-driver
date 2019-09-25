@@ -19,7 +19,7 @@ class SendGridMailChannel extends MailChannel
         // Using @toSendGrid instead of the original @toMail
         $message = $notification->toSendGrid($notifiable);
 
-        if (! $notifiable->routeNotificationFor('sendgrid', $notification) &&
+        if (! $notifiable->routeNotificationFor('mail', $notification) &&
             ! $message instanceof Mailable) {
             return;
         }
@@ -52,26 +52,5 @@ class SendGridMailChannel extends MailChannel
         }
 
         parent::buildMessage($mailMessage, $notifiable, $notifiable, $message);
-    }
-
-    /**
-     * Get the recipients of the given message.
-     *
-     * @param  mixed  $notifiable
-     * @param  \Illuminate\Notifications\Notification  $notification
-     * @param  \Illuminate\Notifications\Messages\MailMessage  $message
-     * @return mixed
-     */
-    protected function getRecipients($notifiable, $notification, $message)
-    {
-        if (is_string($recipients = $notifiable->routeNotificationFor('sendgrid', $notification))) {
-            $recipients = [$recipients];
-        }
-
-        return collect($recipients)->mapWithKeys(function ($recipient, $email) {
-            return is_numeric($email)
-                    ? [$email => (is_string($recipient) ? $recipient : $recipient->email)]
-                    : [$email => $recipient];
-        })->all();
     }
 }
