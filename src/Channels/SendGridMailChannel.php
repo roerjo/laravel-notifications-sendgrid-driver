@@ -48,7 +48,7 @@ class SendGridMailChannel extends MailChannel
     {
         // Add the SendGrid options, if available
         if (! empty($message->sendgrid_params)) {
-            $mailMessage->embedData($message->sendgrid_params, 'sendgrid/x-smtpapi');
+            $mailMessage->embedData(json_encode($message->sendgrid_params), 'sendgrid/x-smtpapi');
         }
 
         parent::buildMessage($mailMessage, $notifiable, $notifiable, $message);
