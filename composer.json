@@ -1,38 +1,41 @@
 {
-    "name": "roerjo/laravel-notifications-sendgrid-driver",
-    "description": "This library adds a 'sendgrid' notification driver to Laravel.",
-    "keywords": ["laravel", "sendgrid"],
-    "license": "MIT",
-    "require": {
-        "illuminate/notifications": "~5.5"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "~5.7"
-    },
-    "autoload": {
-        "psr-4": {
-            "Roerjo\\LaravelNotificationsSendGridDriver\\": "src"
-        }
-    },
-    "autoload-dev": {
-        "files": [
-            "tests/TestCase.php"
-        ]
-    },
-    "authors": [
-        {
-            "name": "eric.johnson",
-            "email": "roerjo.personal@gmail.com"
-        }
-    ],
-    "support": {
-        "issues": "https://github.com/roerjo/laravel-notifications-sendgrid-driver/issues"
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Roerjo\\LaravelNotificationsSendGridDriver\\SendGridNotificationServiceProvider"
-            ]
-        }
+  "name": "roerjo/laravel-notifications-sendgrid-driver",
+  "description": "This library adds a 'sendgrid' notification driver to Laravel.",
+  "keywords": [
+    "laravel",
+    "sendgrid"
+  ],
+  "license": "MIT",
+  "require": {
+    "illuminate/notifications": ">=5.5"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~5.7"
+  },
+  "autoload": {
+    "psr-4": {
+      "Roerjo\\LaravelNotificationsSendGridDriver\\": "src"
     }
+  },
+  "autoload-dev": {
+    "files": [
+      "tests/TestCase.php"
+    ]
+  },
+  "authors": [
+    {
+      "name": "eric.johnson",
+      "email": "roerjo.personal@gmail.com"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/roerjo/laravel-notifications-sendgrid-driver/issues"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Roerjo\\LaravelNotificationsSendGridDriver\\SendGridNotificationServiceProvider"
+      ]
+    }
+  }
 }
