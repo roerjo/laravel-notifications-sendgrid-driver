@@ -2,6 +2,7 @@
 
 namespace Roerjo\LaravelNotificationsSendGridDriver\Channels;
 
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Notifications\AnonymousNotifiable;
@@ -85,5 +86,22 @@ class SendGridMailChannel extends MailChannel
                     ? [$email => (is_string($recipient) ? $recipient : $recipient->email)]
                     : [$email => $recipient];
         })->all();
+    }
+
+    /**
+     * This method is implemented in Laravel 5.7. Adding it here for support to
+     * previous Laravel versions.
+     *
+     * @param  \Illuminate\Notifications\Notification  $notification
+     * @return array
+     */
+    protected function additionalMessageData($notification)
+    {
+        return [
+            '__laravel_notification' => get_class($notification),
+            '__laravel_notification_queued' => in_array(
+                ShouldQueue::class, class_implements($notification)
+            ),
+        ];
     }
 }
